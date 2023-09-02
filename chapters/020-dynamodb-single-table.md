@@ -1,0 +1,46 @@
+# DynamoDB Single Table Design
+
+**Goal**: Transition to data persistence using DynamoDB.
+
+## Required Reading
+
+- [Getting started with DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStartedDynamoDB.html)
+- [The What, Why, and When of Single-Table Design with DynamoDB](https://www.alexdebrie.com/posts/dynamodb-single-table/)
+- [SenseDeep DynamoDB OneTable - Quick Tour](https://doc.onetable.io/start/quick-tour/)
+
+## Online Shop
+
+![Overview](./diagrams/020-dynamodb-single-table.drawio.svg "Overview")
+
+### Setting up the DynamoDB Table
+Set up a new DynamoDB table for the shop with an emphasis on On Demand capacity.
+
+### Designing the Single-Table Schema
+Adhere to the following guidelines for constructing a single-table schema for products and categories:
+- Incorporate both a Partition and a Sort key, denoting them technically as PK and SK respectively.
+- Given the limited number of categories (under two hundred), maintain a static partition key for them. Assign the category ID as the sort key.
+- As products will be more numerous (upwards of tens of thousands), employ a dynamic partition key. The sort key can be kept constant or mirrored with the partition key.
+- Facilitate product categorization using a Global Secondary Index. Define its partition and sort keys technically (i.e., GSI1PK, GSI1SK), to ensure it can be overloaded in the future.
+
+### Lambda Integration with DynamoDB
+Modify the Lambdas to ensure they perform the following:
+- Grant the necessary permissions to interact with the table.
+- Pass the table name from CDK to Lambda using environment variables.
+- Change the repositories to work with `dynamodb-onetable`.
+
+### Data Seeding Script
+Develop an executable local script under a new `scripts` folder. This script should populate the DynamoDB table by sourcing mock data from the `data` directory from this repository.
+
+### Testing
+
+Invoke each of your APIs to ensure that they work consistently.
+
+## Further Resources
+
+- [Creating a single-table design with Amazon DynamoDB](https://aws.amazon.com/blogs/compute/creating-a-single-table-design-with-amazon-dynamodb/)
+- [DynamoDB OneTable API Overview](https://www.sensedeep.com/blog/posts/2021/dynamodb-onetable-tour.html)
+- [Data Modeling for DynamoDB Single Table Design](https://www.sensedeep.com/blog/posts/2021/dynamodb-singletable-design.html)
+- [DynamoDB with OneTable Schemas](https://www.sensedeep.com/blog/posts/2021/dynamodb-schemas.html)
+- [Choosing the Right DynamoDB Partition Key](https://aws.amazon.com/blogs/database/choosing-the-right-dynamodb-partition-key/)
+- [Using Global Secondary Indexes in DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.html)
+- [How to model one-to-many relationships in DynamoDB](https://www.alexdebrie.com/posts/dynamodb-one-to-many/#secondary-index--the-query-api-action)

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .details {
+            margin-bottom: 10px;
+        }
+        .footer {
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            We value your feedback!
+        </div>
+        <div class="details">
+            <strong>Hello {{ customerName }}!</strong>
+            <p>We hope you enjoyed your recent purchase. We would love to hear your feedback!</p>
+            <a href="https://example.com">Leave Feedback</a>
+        </div>
+        <div class="footer">
+            If you have any questions or need further information, please contact our customer service at support@onlineshop.com.
+        </div>
+    </div>
+</body>
+</html>

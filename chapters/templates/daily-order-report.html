@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Daily Order Report</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Daily Order Report</h1>
+    <h3>Date: {{currentDate}}</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Email</th>
+                <th>Shipping Address</th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price (Per Item)</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each orders}}
+            <tr>
+                <td>{{this.customerId}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.shippingAddress}}</td>
+                <td>{{this.productName}}</td>
+                <td>{{this.quantity}}</td>
+                <td>${{this.pricePerItem}}</td>
+                <td>${{this.totalPrice}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <p><strong>Total Price for All Orders: ${{grandTotal}}</strong></p>
+</body>
+</html>

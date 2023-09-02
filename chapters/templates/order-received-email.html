@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .details {
+            margin-bottom: 10px;
+        }
+        .footer {
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Thank You for Your Order!
+        </div>
+        <div class="details">
+            <strong>Order ID:</strong> {{order_id}}<br>
+            <strong>Customer Name:</strong> {{customer_name}}<br>
+            <strong>Email:</strong> {{customer_email}}<br>
+            <strong>Shipping Address:</strong> {{shipping_address}}<br>
+            <strong>Order Details:</strong> 
+            <ul>
+                <!-- Use Handlebars' #each helper to loop through order details -->
+                {{#each order_details}}
+                    <li>{{this.product_name}} - Quantity: {{this.quantity}}</li>
+                {{/each}}
+            </ul>
+            <strong>Total Amount:</strong> {{total_amount}}
+        </div>
+        <div class="footer">
+            If you have any questions or need further information, please contact our customer service at support@onlineshop.com.
+        </div>
+    </div>
+</body>
+</html>

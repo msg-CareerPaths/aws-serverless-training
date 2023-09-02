@@ -1,0 +1,102 @@
+[
+    {
+        "Id": "01H98C728RZGWX19BYCDTKH5VM",
+        "Name": "Music",
+        "Description": "Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis."
+    },
+    {
+        "Id": "01H98C729005360D2RFKPBCY9P",
+        "Name": "Clothing",
+        "Description": "Duis at velit eu est congue elementum."
+    },
+    {
+        "Id": "01H98C728ZAJED2M17713299ER",
+        "Name": "Books",
+        "Description": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh."
+    },
+    {
+        "Id": "01H98C729DXBN5MBEZ4FPAA4F7",
+        "Name": "Outdoors",
+        "Description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue."
+    },
+    {
+        "Id": "01H98C729JFFPQWD75MX4AVSHV",
+        "Name": "Jewelry",
+        "Description": "Nunc purus. Phasellus in felis. Donec semper sapien a libero."
+    },
+    {
+        "Id": "01H98C729T7W3MWXSSWW7FWKND",
+        "Name": "Shoes",
+        "Description": "Fusce consequat. Nulla nisl."
+    },
+    {
+        "Id": "01H98C729Z7HNWYBEY8M8HJA23",
+        "Name": "Grocery",
+        "Description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio."
+    },
+    {
+        "Id": "01H98C72A5DFFEFEXWB8CSZBJ5",
+        "Name": "Shoes",
+        "Description": "Nulla suscipit ligula in lacus."
+    },
+    {
+        "Id": "01H98C72ACYN9165VSYN7WWK18",
+        "Name": "Beauty",
+        "Description": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis."
+    },
+    {
+        "Id": "01H98C72AK1BK0J0AP3GEAX3NX",
+        "Name": "Kids",
+        "Description": "Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci."
+    },
+    {
+        "Id": "01H98C72AT9DFT3C8SBMVPA88V",
+        "Name": "Clothing",
+        "Description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam."
+    },
+    {
+        "Id": "01H98C72B1GPMK3JN86Z3SP2WR",
+        "Name": "Clothing",
+        "Description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa."
+    },
+    {
+        "Id": "01H98C72B6D4N803HN63Q71FTN",
+        "Name": "Tools",
+        "Description": "Cras pellentesque volutpat dui."
+    },
+    {
+        "Id": "01H98C72BE94CCM1MV64WBG9EW",
+        "Name": "Home",
+        "Description": "Aenean sit amet justo."
+    },
+    {
+        "Id": "01H98C72BHDPY00RPKWJVJ6P7J",
+        "Name": "Baby",
+        "Description": "Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat."
+    },
+    {
+        "Id": "01H98C72BP9MAEDV0YTBY54MP9",
+        "Name": "Sports",
+        "Description": "Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio."
+    },
+    {
+        "Id": "01H98C72BTHZCQCXWHATGVJ072",
+        "Name": "Music",
+        "Description": "Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus."
+    },
+    {
+        "Id": "01H98C72C4GK79N4GRRMVNBAWQ",
+        "Name": "Books",
+        "Description": "Morbi vel lectus in quam fringilla rhoncus."
+    },
+    {
+        "Id": "01H98C72CCVKCG242FG47C665Q",
+        "Name": "Health",
+        "Description": "Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh."
+    },
+    {
+        "Id": "01H98C72CKTAHYFG81321P6C93",
+        "Name": "Beauty",
+        "Description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique."
+    }
+]

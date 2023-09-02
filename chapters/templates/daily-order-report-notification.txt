@@ -1,0 +1,17 @@
+Dear Store Owner,
+
+A new daily order report has been generated and is now available for your review.
+
+Report Date: {{currentDate}}
+
+Number of Orders Today: {{totalOrders}}
+
+Total Revenue: ${{grandTotal}}
+
+You can view and download the detailed report by clicking on the link below:
+{{presignedURL}}
+
+Thank you for choosing our platform!
+
+Best Regards,
+Online Shop

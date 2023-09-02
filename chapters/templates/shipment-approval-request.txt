@@ -1,0 +1,12 @@
+Dear Store Owner,
+
+A new order with ID {{ orderId }} has been placed by {{ customerName }}.
+
+To approve the shipment, click the link below:
+{{ approvalLambdaUrl }}?orderId={{orderId}}&taskToken={{taskToken}}&result=approve
+
+To reject the shipment, click the link below:
+{{ approvalLambdaUrl }}?orderId={{orderId}}&taskToken={{taskToken}}&result=reject
+
+Thank you,
+Online Shop
