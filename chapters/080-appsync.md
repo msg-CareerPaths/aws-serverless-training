@@ -31,7 +31,7 @@ Start by designing a GraphQL schema that encapsulates the functionality describe
    - Stick to a single Lambda function per individual query or mutation.
 - **Authorization Mechanism**: 
    - Implement the `AMAZON_COGNITO_USER_POOLS` authorization model for the GraphQL API.
-   - Utilize the `cognito_groups` parameter to apply the role-based access rules outlined in the Cognito chapter. 
+   - Utilize the `cognito_groups` AppSync directive parameter to apply the role-based access rules outlined in the Cognito chapter. 
 
 ### Testing 
 
