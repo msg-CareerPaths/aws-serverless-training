@@ -25,12 +25,13 @@ Start by designing a GraphQL schema that encapsulates the functionality describe
 
 - **Setting Up**: Initialize a new AppSync API through CDK, ensuring that the designed GraphQL schema is appropriately referenced.
 - **Resolver Choice**: 
-   - For basic CRUD operations, you can opt for either Lambda resolvers or JavaScript resolvers based on their support status in CDK (consider checking the provided further resources).
-   - It's essential to avoid using VTL-based DynamoDB resolvers.
-   - For more intricate operations entailing business logic (like the order placement API), implement Lambda resolvers. Stick to a single Lambda function per individual query or mutation.
+   - For basic CRUD operations, you can opt for either Lambda resolvers or JavaScript resolvers based on their support status in CDK (check the further resources below).
+   - DO NOT use VTL-based DynamoDB resolvers.
+   - For more intricate operations entailing business logic (like the order placement flow), implement Lambda resolvers.
+   - Stick to a single Lambda function per individual query or mutation.
 - **Authorization Mechanism**: 
    - Implement the `AMAZON_COGNITO_USER_POOLS` authorization model for the GraphQL API.
-   - Utilize the `cognito_groups` parameter to apply the role-based access rules outlined in earlier chapters. 
+   - Utilize the `cognito_groups` parameter to apply the role-based access rules outlined in the Cognito chapter. 
 
 ### Testing 
 

@@ -13,23 +13,23 @@
 ![Overview](./diagrams/020-dynamodb-single-table.drawio.svg "Overview")
 
 ### Setting up the DynamoDB Table
-Set up a new DynamoDB table for the shop with an emphasis on On Demand capacity.
+Set up a new DynamoDB table for the shop. Use the "On Demand" capacity model.
 
 ### Designing the Single-Table Schema
 Adhere to the following guidelines for constructing a single-table schema for products and categories:
 - Incorporate both a Partition and a Sort key, denoting them technically as PK and SK respectively.
-- Given the limited number of categories (under two hundred), maintain a static partition key for them. Assign the category ID as the sort key.
-- As products will be more numerous (upwards of tens of thousands), employ a dynamic partition key. The sort key can be kept constant or mirrored with the partition key.
-- Facilitate product categorization using a Global Secondary Index. Define its partition and sort keys technically (i.e., GSI1PK, GSI1SK), to ensure it can be overloaded in the future.
+- Given the limited number of categories (under two hundred), maintain a static partition key for them. Assign the category ID as part of the sort key.
+- As products will be more numerous (upwards of tens of thousands), employ a dynamic partition key. The sort key can be kept constant or identical with the partition key.
+- Add support for reading products by category using a Global Secondary Index. Define its partition and sort keys technically (i.e., GSI1PK, GSI1SK), to ensure it can be overloaded in the future.
 
 ### Lambda Integration with DynamoDB
-Modify the Lambdas to ensure they perform the following:
+Modify the Lambdas by doing the following:
 - Grant the necessary permissions to interact with the table.
 - Pass the table name from CDK to Lambda using environment variables.
 - Change the repositories to work with `dynamodb-onetable`.
 
 ### Data Seeding Script
-Develop an executable local script under a new `scripts` folder. This script should populate the DynamoDB table by sourcing mock data from the `data` directory from this repository.
+Develop an executable local script under a new `scripts` folder. This script should populate the DynamoDB table by sourcing mock data from the `data` directory of this repository.
 
 ### Testing
 

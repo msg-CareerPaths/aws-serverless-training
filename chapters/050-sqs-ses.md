@@ -1,6 +1,6 @@
 # Background Processing using SQS
 
-**Goal:** Implement a system to process orders asynchronously using Amazon SQS and send order confirmation emails to customers via Amazon SES.
+**Goal:** Process orders asynchronously using Amazon SQS and send order confirmation emails to customers via Amazon SES.
 
 ## Required Reading
 
@@ -15,27 +15,27 @@
 
 ### Setting up the Order API
 
-- **API Endpoint Creation**: Set up a new endpoint to facilitate customer order placements, backed by a new Lambda.
+- **API Endpoint Creation**: Set up a new endpoint to handle customer order placements, backed by a new Lambda.
 - **Lambda Configuration**: This Lambda function should intake:
-   - Customer ID and email (extracted from the Cognito token).
-   - Shipping address provided by the customer.
-   - A set of order details with products and respective quantities.
+   - Customer email (extracted from the Cognito token),
+   - Shipping address provided by the customer,
+   - A set of order details with products and respective quantities,
+   - The order date (the current date).
 - **Persistence**: This Lambda should commit the order information to the database.
 
 ### Email Verification with SES
 
-- **SES Address Verification**: Authenticate several email addresses with Amazon SES. Remember, during the sandbox phase, Amazon SES only permits emails to be sent between verified email addresses.
-- **Error Handling**: Incorporate logic to handle unverified email addresses in your Lambda. 
+Verify several email addresses with Amazon SES. Remember, the Amazon SES sandbox only permits emails to be sent between verified email addresses.
 
 ### SQS Processing with Lambda
 
-- **Queue Setup**: Initialize a new SQS queue.
-- **Lambda Integration**: Configure your Lambda function to push order messages to the SQS queue whenever an order is placed via the API Gateway endpoint.
-- **Lambda Consumer**: Design a consumer Lambda that retrieves messages from the SQS queue.
-- **Email Notification**: For each message processed, the Lambda should craft a simple HTML email confirming the order reception and dispatch it to the customer using SES. The sender's email address can be passed to the Lambda via environment variables.
-- **Dead Letter Queue**: Introduce another SQS queue (Dead Letter Queue) linked with the primary queue to capture messages that encounter processing failures.
+- **Queue Setup**: Create a new SQS queue using CDK.
+- **Lambda Integration**: Configure the "create order" API Lambda function to push order messages to the SQS queue whenever an order is placed.
+- **Lambda Consumer**: Create a new consumer Lambda that retrieves messages from the SQS queue.
+- **Email Notification**: For each message processed, the Lambda should craft a simple HTML email confirming the order reception and dispatch it to the customer using SES. The sender email address can be passed to the Lambda via environment variables.
+- **Dead Letter Queue**: Introduce another SQS queue (Dead Letter Queue) linked with the primary queue to capture messages that encounter failures.
 
-Use Handlebars for the email HTML template. You can find an email template in the `templates` directory of this repository.
+Use Handlebars for generating the email HTML from a template. You can find an email template in the `templates` directory of this repository.
 
 ### Testing 
 

@@ -13,7 +13,7 @@
 
 ### Adjusting the Order Mutation
 
-**Calculating Total Price**: Revise the GraphQL mutation designated for order placement. The linked Lambda function, upon receiving an order, should:
+**Calculating Total Price**: Adjust the GraphQL mutation designated for order placement; the linked Lambda function, upon receiving an order, should:
 - Iterate through each product in the order.
 - Multiply each product's price by its quantity.
 - Sum up these individual totals to calculate the overall order price.
@@ -24,7 +24,7 @@
 - **GraphQL Subscription**: Design a new GraphQL subscription named `onNewOrder`. This subscription will get triggered each time the order placement mutation is invoked.
 - **Enhanced Filtering**: To offer a more tailored notification system:
    - Integrate a "minimum price" parameter into the subscription.
-   - Employ this parameter to screen out orders below a specific price threshold, ensuring that admins only receive notifications for orders that exceed this minimum price.
+   - Use this parameter to screen out orders below a the given threshold, ensuring that admins only receive notifications for orders that exceed this minimum price.
 - **Authorization**: Utilizing the AppSync's built-in authorization features:
    - Ensure that only Admin users can access and subscribe to the `onNewOrder` subscription.
    - Utilize Cognito user groups to verify if the authenticated user is part of the Admin group.

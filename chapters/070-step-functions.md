@@ -13,10 +13,9 @@
 
 ![Overview](./diagrams/070-step-functions.drawio.svg "Overview")
 
-### Step Functions State Machine
+### State Machine
 
-- **CDK Deployment**: Create a new Step Functions State Machine using CDK.
-- **Order Lambda Integration**: Modify the existing order creation Lambda function to trigger a new execution of the Step Functions State Machine whenever an order is placed.
+Create a new Step Functions State Machine using CDK. Modify the existing order creation Lambda function to trigger a new execution of this Step Functions State Machine whenever an order is placed.
 
 ### Workflow Steps
 
@@ -24,22 +23,21 @@
 - **Shipment Approval Request**: Use Amazon SNS to notify the store owner, prompting them for an order shipment approval.
 - **Timeout/Rejection Handling**:
    - If the store owner doesn't approve the order shipment within a specified time frame, or outright rejects it:
-     - Update the order status in DynamoDB to "Cancelled".
+     - Delete the order from DynamoDB.
      - Notify the customer via email about the order cancellation.
-     - Conclude the Step Functions workflow execution.
-- **Shipment Confirmation**: On receiving shipment approval, dispatch an email to the customer, informing them of the shipment.
-- **Feedback Request**: Post-shipment, put the workflow on hold for a predetermined period (e.g., 1 day). Once this period elapses, email the customer soliciting feedback on their order.
+     - Stop the Step Functions workflow execution.
+- **Shipment Confirmation**: On receiving shipment approval, send an email via SES to the customer, informing them of the shipment.
+- **Feedback Request**: After sending this email, put the workflow on hold for a predetermined period (e.g., 1 day). Once this period elapses, email the customer asking for feedback on their order.
 
-You can find templates for the emails and the notification in the `templates` directory of this repository.
+You can find templates for the emails and the SNS notification in the `templates` directory of this repository.
 
 ### Lambda URL for Manual Approval
 
-To facilitate the collection of shipment approval or disapproval from the store owner, set up a Lambda function equipped with a Lambda URL. This URL serves as a callback, allowing the store owner to conveniently and directly interact with the Step Functions workflow:
+To handle the collection of shipment approval or disapproval from the store owner, set up a Lambda function configured with a Lambda URL. This URL serves as a callback, allowing the store owner to conveniently and directly interact with the Step Functions workflow. This Lambda will need to receive via query parameters at least the task token and the result.
 
-- **Lambda URL Creation**: Establish a new Lambda function and configure it with an unauthenticated URL. This Lambda will need to receive via query parameters at least the task token and the result.
-- **Approval/Rejection Logic**: Integrate logic to handle both approval and rejection responses from the store owner:
-   - **Approval**: Advance the Step Functions workflow to the "Shipment Confirmation" phase.
-   - **Rejection**: Navigate the workflow to the "Timeout/Rejection Handling" phase.
+Add logic in the Lambda and State Machine to handle both approval and rejection responses from the store owner:
+- **Approval**: Advance the workflow to the "Shipment Confirmation" flow.
+- **Rejection**: Advance the workflow to the "Timeout/Rejection Handling" flow.
    
 ### Testing
 

@@ -17,33 +17,34 @@
 
 ### DynamoDB Adjustments
 
-- **Migration**: Modify the existing DynamoDB model through a migration process.
-- **GSI Overloading**: Enhance a Global Secondary Index (GSI) to facilitate queries for orders placed after a specified date.
+Overload GSI1 to support querying for orders placed after a specified date. Write a DynamoDB migration to populate this overloaded GSI. 
 
 ### S3 Setup & Report Generation
 
-- **S3 Bucket Creation**: Establish a new S3 bucket dedicated to storing daily order reports.
-- **EventBridge Rule**: Formulate a schedule-driven rule using EventBridge to activate a Lambda daily.
+- **S3 Bucket Creation**: Establish a new S3 bucket for storing daily order reports.
+- **EventBridge Rule**: Set up a schedule-driven rule using EventBridge to invoke a new Lambda daily.
 - **Lambda Configuration**: The invoked Lambda should:
    - Query the DynamoDB table to retrieve all orders from the previous day.
-   - Generate a PDF report, enlisting all products required to fulfill these orders, categorized by: Customer, Address, Product, and Quantity.
+   - Generate a PDF report, aggregating all products required to fulfill these orders, categorized by: Customer, Address, Product, and Quantity.
    - Use Handlebars to craft an HTML template of the report.
    - Utilize Puppeteer to convert this HTML template into a PDF format.
-   - Deposit this PDF report into the S3 bucket, with a naming convention based on the current date/time.
+   - Store this PDF report into the S3 bucket, with a naming convention based on the current date/time.
 
-You can find templates for the report and the notification in the `templates` directory of this repository.
+You can find a HTML template for the report in the `templates` directory of this repository.
 
 ### SNS Configuration & Notification
 
-- **SNS Topic Creation**: Develop an SNS topic.
-- **Subscription**: Enroll the store owner's (your) email to this topic. Verify its functionality by manually dispatching a test notification.
-- **S3 Lambda Trigger**: Configure a Lambda function to get activated upon the uploading of a new PDF report to the S3 bucket. This Lambda's responsibilities include:
-   - Constructing a presigned URL pointing towards the new S3 object.
-   - Dispatching an SNS notification embedding this presigned URL, ensuring the store owner receives an email containing the report link.
+- **SNS Topic Creation**: Create a new SNS topic.
+- **Subscription**: Subscribe the store owner's (your) email to this topic. Verify it works by manually dispatching a test notification.
+- **S3 Lambda Trigger**: Configure a Lambda function to get invoked when a new PDF report is uploaded to the S3 bucket. This Lambda:
+   - Constructs a presigned URL pointing towards the new S3 object.
+   - Sends an SNS notification embedding this presigned URL, ensuring the store owner receives an email containing the report link.
+
+You can find a plan text template for the SNS notification in the `templates` directory of this repository.
 
 ### Testing
 
-1. **Schedule Alteration**: Temporarily modify the EventBridge schedule for more frequent triggers.
+1. **Schedule Alteration**: Temporarily modify the EventBridge schedule to trigger more frequently (to test it more easily).
 2. **Validation**: Ensure that the entire process, encompassing report generation, its storage, and subsequent notification to the store owner, works properly.
 
 ## Further Resources
