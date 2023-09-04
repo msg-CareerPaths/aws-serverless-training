@@ -24,7 +24,7 @@ Configure an API Gateway to expose products and their corresponding categories w
 For each of the API operations, create a dedicated Lambda function. Structure your Lambda codebase using the following directories:
  - `models`: Contains interfaces to represent entities, data transfer objects, etc.
  - `repositories`: Houses classes for data retrieval. Initially, employ mock or in-memory storage within these repositories (this will be iterated upon in subsequent chapters).
- - `services`: Consists of classes that encapsulate the core business logic, solely leveraging repositories for data extraction.
+ - `services`: Consists of classes that encapsulate the core business logic, solely leveraging repositories for data access.
  - `handlers`: Each Lambda should have a separate file in this directory. Every file should contain a handler function that instantiates the corresponding service class plus dependencies and invokes the necessary service method.
 
 ### Input Validation and Handling
