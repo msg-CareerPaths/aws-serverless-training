@@ -17,7 +17,7 @@
 
 ### DynamoDB Adjustments
 
-Overload GSI1 to support querying for orders placed after a specified date. Write a DynamoDB migration to populate this overloaded GSI. 
+Overload GSI1 to support querying for orders placed after a specified date (e.g., GSI1PK = "ORDERSBYDATE", GSI1SK = "ORDERDATE#2023-10-01"). Write a DynamoDB migration to populate this overloaded GSI. 
 
 ### S3 Setup & Report Generation
 
