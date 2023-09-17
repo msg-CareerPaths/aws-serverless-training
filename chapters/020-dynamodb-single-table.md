@@ -18,9 +18,9 @@ Set up a new DynamoDB table for the shop. Use the "On Demand" capacity model.
 ### Designing the Single-Table Schema
 Adhere to the following guidelines for constructing a single-table schema for products and categories:
 - Incorporate both a Partition and a Sort key, denoting them technically as PK and SK respectively.
-- Given the limited number of categories (under two hundred), maintain a static partition key for them. Assign the category ID as part of the sort key.
-- As products will be more numerous (upwards of tens of thousands), employ a dynamic partition key. The sort key can be kept constant or identical with the partition key.
-- Add support for reading products by category using a Global Secondary Index. Define its partition and sort keys technically (i.e., GSI1PK, GSI1SK), to ensure it can be overloaded in the future.
+- Given the limited number of categories (under two hundred), maintain a static/constant partition key for them (e.g., PK = "CATEGORIES"). Assign the category ID as part of the sort key (e.g., SK = "CATEGORY#123").
+- As products will be more numerous (upwards of tens of thousands), employ a dynamic partition key (e.g., PK = "PRODUCT#123"). The sort key can be kept static/constant or identical to the partition key (e.g., PK = "PRODUCT#123").
+- Add support for reading products by category using a Global Secondary Index. Name its partition and sort keys technically (i.e., GSI1PK, GSI1SK), to ensure it can be overloaded in the future.
 
 ### Lambda Integration with DynamoDB
 Modify the Lambdas by doing the following:
