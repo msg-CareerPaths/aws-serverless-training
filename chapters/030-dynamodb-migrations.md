@@ -11,7 +11,7 @@
 ![Overview](./diagrams/030-dynamodb-migrations.drawio.svg "Overview")
 
 ### Introducing the Supplier Entity
-Add a new entity named 'Supplier' into your DynamoDB table and seed the related mock data. Create a new Global Secondary Index (GSI2) to allow reading products by supplier. Use a DynamoDB migration to populate the PK and SK of this GSI based on existing product data.
+Add a new entity named 'Supplier' into your DynamoDB table and seed the related mock data. Create a new Global Secondary Index (GSI2) to allow reading products by the supplier (e.g., GSI2PK = "SUPPLIER#XYZ", GSI2SK = "PRODUCT#ABC"). Use a DynamoDB migration to populate the PK and SK of this GSI based on existing product data.
 
 ### API Integration with Supplier Entity
 Construct new APIs facilitating the following actions:
