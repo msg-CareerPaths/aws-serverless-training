@@ -5,7 +5,7 @@
 ## Required Reading
 
 - [Getting started with Amazon SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-getting-started.html)
-- [How do I send email using Lambda and Amazon SES?](https://repost.aws/knowledge-center/lambda-send-email-sesl)
+- [How do I send email using Lambda and Amazon SES?](https://repost.aws/knowledge-center/lambda-send-email-ses)
 - [Using Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html)
 - [Amazon SQS dead-letter queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html)
 
