@@ -52,3 +52,4 @@ Use Handlebars for generating the email HTML from a template. You can find an em
 - [Basic SQS architecture](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-basic-architecture.html)
 - [SQS Example in AWS CDK [SNS, Lambda, DLQ] - Complete Guide](https://bobbyhadz.com/blog/aws-cdk-sqs-sns-lambda)
 - [Creating and verifying identities in Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html)
+- [Using JavaScript Promises in AWS SDK V2](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/using-promises.html)
