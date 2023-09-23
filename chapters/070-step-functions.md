@@ -49,3 +49,4 @@ Add logic in the Lambda and State Machine to handle both approval and rejection 
 
 - [Tutorial: Creating a Lambda function with a function URL](https://docs.aws.amazon.com/lambda/latest/dg/urls-tutorial.html)
 - [Using callback URLs for approval emails with AWS Step Functions](https://aws.amazon.com/blogs/aws/using-callback-urls-for-approval-emails-with-aws-step-functions/)
+- [Using Step Function Task Tokens with CDK](https://aws.hashnode.com/using-step-function-task-tokens-with-cdk)
