@@ -27,7 +27,7 @@ For each of the API operations, create a dedicated Lambda function. Structure yo
  - `services`: Consists of classes that encapsulate the core business logic, solely leveraging repositories for data access.
  - `handlers`: Each Lambda should have a separate file in this directory. Every file should contain a handler function that instantiates the corresponding service class plus dependencies and invokes the necessary service method.
 
-**Important**: For defining your Lambdas, use the [NodejsFunction CDK construct](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs-readme.html#nodejs-function) and [local bundling](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs-readme.html#local-bundling) to keep the deployments fast. 
+**Important**: For defining your Lambdas, use the [NodejsFunction CDK construct](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs-readme.html#nodejs-function) and [local bundling](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs-readme.html#local-bundling) to keep the deployments fast. Make sure to use TypeScript to write your Lambda code.
 
 ### Input Validation and Handling
 In the `handlers`, ensure you validate API Gateway input using the [zod](https://www.npmjs.com/package/zod) library. The zod schemas can also assist in defining your `models` through [inference](https://www.npmjs.com/package/zod#type-inference).
