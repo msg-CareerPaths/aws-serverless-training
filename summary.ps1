@@ -16,7 +16,7 @@ foreach ($file in $markdownFiles) {
 
         # Create a relative path from the current working directory to the markdown file
         # Replace backslashes with forward slashes and start with ./
-        $fullPath = "https://raw.githubusercontent.com/msg-CareerPaths/aws-serverless-training/master/" + ($file.FullName.Replace($PWD.Path, '').Replace('\', '/').TrimStart('/'))
+        $fullPath = "https://github.com/msg-CareerPaths/aws-serverless-training/blob/master/" + ($file.FullName.Replace($PWD.Path, '').Replace('\', '/').TrimStart('/'))
 
         # Create a relative markdown link and print it
         $link = " - [$title]($fullPath)"
