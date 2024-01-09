@@ -10,7 +10,7 @@
 
 ## Online Shop
 
-![Overview](./diagrams/020-dynamodb-single-table.drawio.svg "Overview")
+![Overview](https://raw.githubusercontent.com/msg-CareerPaths/aws-serverless-training/master/chapters/diagrams/020-dynamodb-single-table.drawio.svg "Overview")
 
 ### Setting up the DynamoDB Table
 Set up a new DynamoDB table for the shop. Use the "On Demand" capacity model.

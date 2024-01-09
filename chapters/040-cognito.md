@@ -9,7 +9,7 @@
 
 ## Online Shop
 
-![Overview](./diagrams/040-cognito.drawio.svg "Overview")
+![Overview](https://raw.githubusercontent.com/msg-CareerPaths/aws-serverless-training/master/chapters/diagrams/040-cognito.drawio.svg "Overview")
 
 ### Setting up Cognito User Pool and App Client
 

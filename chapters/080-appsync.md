@@ -11,7 +11,7 @@
 
 ## Online Shop
 
-![Overview](./diagrams/080-appsync.drawio.svg "Overview")
+![Overview](https://raw.githubusercontent.com/msg-CareerPaths/aws-serverless-training/master/chapters/diagrams/080-appsync.drawio.svg "Overview")
 
 ### Schema Design
 

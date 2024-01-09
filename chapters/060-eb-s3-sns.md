@@ -13,7 +13,7 @@
 
 ## Online Shop
 
-![Overview](./diagrams/060-eb-s3-sns.drawio.svg "Overview")
+![Overview](https://raw.githubusercontent.com/msg-CareerPaths/aws-serverless-training/master/chapters/diagrams/060-eb-s3-sns.drawio.svg "Overview")
 
 ### DynamoDB Adjustments
 

@@ -11,7 +11,7 @@
 
 ## Online Shop
 
-![Overview](./diagrams/050-sqs-ses.drawio.svg "Overview")
+![Overview](https://raw.githubusercontent.com/msg-CareerPaths/aws-serverless-training/master/chapters/diagrams/050-sqs-ses.drawio.svg "Overview")
 
 ### Setting up the Order API
 

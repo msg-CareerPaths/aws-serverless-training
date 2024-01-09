@@ -8,7 +8,7 @@
 
 ## Online Shop
 
-![Overview](./diagrams/010-apigw-and-lambda.drawio.svg "Overview")
+![Overview](https://raw.githubusercontent.com/msg-CareerPaths/aws-serverless-training/master/chapters/diagrams/010-apigw-and-lambda.drawio.svg "Overview")
 
 ### Setting Up API Gateway V2 ("HTTP API")
 Configure an API Gateway to expose products and their corresponding categories with the operations detailed below:

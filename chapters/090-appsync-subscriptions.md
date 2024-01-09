@@ -9,7 +9,7 @@
 
 ## Online Shop
 
-![Overview](./diagrams/090-appsync-subscriptions.drawio.svg "Overview")
+![Overview](https://raw.githubusercontent.com/msg-CareerPaths/aws-serverless-training/master/chapters/diagrams/090-appsync-subscriptions.drawio.svg "Overview")
 
 ### Adjusting the Order Mutation
 

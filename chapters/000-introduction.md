@@ -22,7 +22,7 @@ Engineers seeking proficiency in AWS serverless development, with an emphasis on
 
 ## Online Shop
 
-![Overview](./diagrams/000-introduction.drawio.svg "Overview")
+![Overview](https://raw.githubusercontent.com/msg-CareerPaths/aws-serverless-training/master/chapters/diagrams/000-introduction.drawio.svg "Overview")
 
 ### Data Model
 Begin by understanding the data schema of the online shop:
